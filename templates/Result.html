@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<table class="table table-dark">
+    <thead>
+    <tr>
+        <th scope="col">STT</th>
+        <th scope="col">Name</th>
+        <th scope="col">Score</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in range(len) %}
+    <tr>
+        <td>{{i+1}}</td>
+        <td><a href="http://127.0.0.1:5000/read_file?file={{result[i][1]}}">{{result[i][1]}}</a></td>
+        <td>{{result[i][0]}}</td>
+        {% endfor %}
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
