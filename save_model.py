@@ -2,6 +2,7 @@ from os import listdir
 from os.path import isfile, join
 from tika import parser
 titles = [f for f in listdir("data") if isfile(join("data", f))] #De lay titles la ten file.
+
 # luu cac doan van ban thanh mot list
 documents = []
 for file in titles:
@@ -9,12 +10,8 @@ for file in titles:
     documents.append(raw['content'])
 
 from sklearn.feature_extraction.text import TfidfVectorizer
-
-import nltk
-nltk.download('wordnet')
 from nltk.corpus import stopwords
 
-nltk.download('punkt')
 stop_words = set(stopwords.words('english'))
 # love loving loves -> love
 from nltk import word_tokenize

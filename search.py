@@ -3,12 +3,8 @@ from os.path import isfile, join
 titles = [f for f in listdir("data") if isfile(join("data", f))]
 
 from sklearn.metrics.pairwise import linear_kernel
-
-import nltk
-nltk.download('wordnet')
 from nltk.corpus import stopwords
 
-nltk.download('punkt')
 stop_words = set(stopwords.words('english'))
 # love loving loves -> love
 from nltk import word_tokenize

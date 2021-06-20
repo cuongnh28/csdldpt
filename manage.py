@@ -11,7 +11,7 @@ class LemmaTokenizer:
     def __call__(self, doc):
         return [self.wnl.lemmatize(t) for t in word_tokenize(doc) if t not in self.ignore_tokens]
 
-from flask import Flask,render_template,request,redirect,Response
+from flask import Flask,render_template,request,Response
 import search
 
 app=Flask(__name__)
