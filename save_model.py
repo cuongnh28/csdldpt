@@ -1,7 +1,8 @@
 from os import listdir
 from os.path import isfile, join
 from tika import parser
-titles = [f for f in listdir("data") if isfile(join("data", f))]
+titles = [f for f in listdir("data") if isfile(join("data", f))] #De lay titles la ten file.
+# luu cac doan van ban thanh mot list
 documents = []
 for file in titles:
     raw = parser.from_file('data/' + file)

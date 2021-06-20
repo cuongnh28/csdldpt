@@ -33,7 +33,7 @@ def search(input_text):
 
     test_idf = vectorizer.transform([input_text])
 
-    cosine_similarities = linear_kernel(vectors, test_idf).flatten()  # Tinh linear kerner.
+    cosine_similarities = linear_kernel(vectors, test_idf).flatten()  # Tinh linear kerner score.
     document_scores = [item.item() for item in cosine_similarities[0:]]
     document_scores = ['%.2f' % elem for elem in document_scores]
 

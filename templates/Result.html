@@ -19,7 +19,7 @@
     {% for i in range(len) %}
     <tr>
         <td>{{i+1}}</td>
-        <td><a href="http://127.0.0.1:5000/read_file?file={{result[i][1]}}">{{result[i][1]}}</a></td>
+        <td><a href="http://127.0.0.1:5000/read_file?file={{result[i][1]}}" target="_blank">{{result[i][1]}}</a></td>
         <td>{{result[i][0]}}</td>
         {% endfor %}
     </tr>
