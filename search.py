@@ -14,7 +14,14 @@ class LemmaTokenizer:
     """
     Interface to the WordNet lemmatizer from nltk
     """
-    ignore_tokens = [',', '.', ';', ':', '"', '``', "''", '`']
+    ignore_tokens = [',', '.', ';', ':', '"', '``', "''", '`', '!', '#', '$',
+                     '%', "'", '/', '-', '&', '<', '?', '...', '....', '..', "'in",
+                     '*', '--', "-it", "-do", '‘', '’', '“', '•', '…', '”', '.—i',
+                     '.—it', '.—oh', "'70s", "'do", "'dolph", "'em", "'forrester",
+                     "'if", "'it", "'m", "'mrs", "'niel", "'pon", "'tell", "'way",
+                     "'when", '(', ')', '-all', '.004', '.20', '—was',
+                     '—well', '—were', '—what', '—where', '—which', '—while',
+                     '—why', '—with', '—world', '—would', '—you']
     def __init__(self):
         self.wnl = WordNetLemmatizer()
     def __call__(self, doc):

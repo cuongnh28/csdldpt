@@ -21,7 +21,14 @@ class LemmaTokenizer:
     """
     Interface to the WordNet lemmatizer from nltk
     """
-    ignore_tokens = [',', '.', ';', ':', '"', '``', "''", '`']
+    ignore_tokens = [',', '.', ';', ':', '"', '``', "''", '`', '!', '#', '$',
+                     '%', "'", '/', '-', '&', '<', '?', '...', '....', '..', "'in",
+                     '*', '--', "-it", "-do", '‘', '’', '“', '•', '…', '”', '.—i',
+                     '.—it', '.—oh', "'70s", "'do", "'dolph", "'em", "'forrester",
+                     "'if", "'it", "'m", "'mrs", "'niel", "'pon", "'tell", "'way",
+                     "'when", '(', ')', '-all', '.004', '.20', '—was',
+                     '—well', '—were', '—what', '—where', '—which', '—while',
+                     '—why', '—with', '—world', '—would', '—you']
     def __init__(self):
         self.wnl = WordNetLemmatizer()
     def __call__(self, doc):
@@ -34,6 +41,7 @@ token_stop = tokenizer(' '.join(stop_words))
 vectorizer = TfidfVectorizer(stop_words=token_stop, tokenizer=tokenizer) #de luu tu vung va tokenize
 vectors = vectorizer.fit_transform(documents) # Trich xuat dac trung.
 # print(vectorizer.get_feature_names())
+# print(vectors)
 import pickle
 
 with open('vectorizer.pkl', 'wb') as file:
